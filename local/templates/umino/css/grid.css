@@ -1,0 +1,95 @@
+/* grid */
+.grid__1,
+.grid__2,
+.grid__3,
+.grid__4,
+.grid__5,
+.grid__6,
+.grid__7 {
+    display: grid;
+    grid-gap: 15px;
+}
+.grid__1 {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: 300px;
+}
+.grid__2 {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: 200px;
+}
+.grid__3 {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 300px;
+}
+.grid__4 {
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 200px;
+}
+.grid__5 {
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 300px;
+}
+.grid__6 {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-auto-rows: minmax(300px, auto);
+}
+.grid__7 {
+    grid-template-columns: 1fr;
+    grid-auto-rows: minmax(200px, auto);
+}
+.grid__2 > div:nth-child(1) {
+    grid-column: 1/3;
+    grid-row: 1/3;
+}
+.grid__4.odd > div:last-child {grid-column: 1/3;}
+.grid__5.odd > div:last-child {grid-column: 1/3;}
+@media (max-width: 991px) {
+    .grid__1 {grid-template-columns: 1fr 1fr;}
+    .grid__1.odd > div:last-child {grid-column: 1/3;}
+
+    .grid__2 {grid-template-columns: 1fr 1fr;}
+
+    .grid__6 {grid-template-columns: 1fr 1fr;}
+}
+@media (max-width: 767px) {
+
+    .grid__1,
+    .grid__2,
+    .grid__3,
+    .grid__4,
+    .grid__5
+    {grid-auto-rows: 50vw;}
+    .grid__6,
+    .grid__7
+    {grid-auto-rows: minmax(50vw, auto);}
+
+    .grid__1 {grid-template-columns: 1fr;}
+    .grid__1.odd > div:last-child {grid-column: 1/2;}
+
+    .grid__2 {grid-template-columns: 1fr;}
+    .grid__2 > div:nth-child(1) {grid-column: 1/2;grid-row: 1/2;}
+
+    .grid__4 {grid-template-columns: 1fr;}
+    .grid__4.odd > div:last-child {grid-column: 1/2;}
+
+    .grid__5 {grid-template-columns: 1fr;}
+    .grid__5.odd > div:last-child {grid-column: 1/2;}
+
+    .grid__6 {grid-template-columns: 1fr;}
+}
+
+@media (max-width: 575px) {
+
+}
+@media (min-width: 576px) and (max-width: 767px) {
+
+}
+@media (min-width: 768px) and (max-width: 991px) {
+
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
+@media (min-width: 1200px) {
+
+}

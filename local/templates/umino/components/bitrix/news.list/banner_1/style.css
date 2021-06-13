@@ -1,0 +1,74 @@
+/* banner-1 */
+.banner-1 {
+	margin: 15px 0;
+}
+.banner-1__item {
+	background-color: #000;
+	overflow: hidden;
+	position: relative;
+}
+.banner-1__link {
+	display: block;
+	height: 100%;
+}
+.banner-1__link:before {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 70%;
+	bottom: 0;
+	left: 0;
+	background: linear-gradient(0deg, #000, transparent);
+	opacity: 0.7;
+	transition: 300ms ease-in-out;
+}
+.banner-1__link:hover:before {
+	opacity: 0.8;
+	transition: 300ms ease-in-out;
+}
+.banner-1__image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+}
+.banner-1__info {
+	position: absolute;
+	width: 100%;
+	left: 0;
+	bottom: 0;
+	color: #fff;
+	padding: 15px;
+}
+.banner-1__info-title {
+	font-family: RobotoBold;
+	font-size: 17px;
+	line-height: 1.4em;
+}
+.banner-1__subtitle {
+	line-height: 1.2em;
+}
+@media (max-width: 575px) {
+	.banner-1__subtitle {display: none;}
+}
+.banner-1__sticker {
+	position: absolute;
+	right: 0;
+	top: 0;
+	padding: 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.banner-1__sticker a {
+	display: inline-block;
+	color: #fff;
+	padding: 4px 8px 2px 8px;
+	font-size: 10px;
+	line-height: 1em;
+	text-transform: uppercase;
+	border: 1px solid #fff;
+	background-color: rgba(0,0,0,0.2);
+	border-radius: 5px;
+	margin: 2px;
+}

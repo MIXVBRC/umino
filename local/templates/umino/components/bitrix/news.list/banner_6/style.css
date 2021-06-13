@@ -1,0 +1,51 @@
+/* banner-6 */
+.banner-6 {
+	margin: 15px 0;
+}
+.banner-6__item {
+	overflow: hidden;
+	position: relative;
+}
+.banner-6__link {
+	display: block;
+	height: 100%;
+}
+.banner-6__link:hover:before {
+	opacity: 0.8;
+	transition: 300ms ease-in-out;
+}
+.banner-6__image {
+	width: 100%;
+	height: 200px;
+	object-fit: cover;
+	object-position: center;
+	background-color: #000;
+}
+.banner-6__info {
+	color: #000;
+	padding: 15px;
+}
+.banner-6__title {
+	font-family: RobotoBold;
+	font-size: 17px;
+	line-height: 1.4em;
+}
+.banner-6__subtitle {
+	line-height: 1.2em;
+}
+.banner-6__sticker {
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	border: 1px solid #fff;
+	background-color: rgba(0,0,0,0.2);
+	border-radius: 5px;
+}
+.banner-6__sticker a {
+	display: block;
+	color: #fff;
+	padding: 4px 8px 2px 8px;
+	font-size: 10px;
+	line-height: 1em;
+	text-transform: uppercase;
+}

@@ -1,0 +1,93 @@
+/* banner__1 */
+.banner__1 {
+	margin: 15px 0;
+}
+.banner__1 .banner__item {
+	background-color: #000;
+	overflow: hidden;
+	position: relative;
+}
+.banner__1 .banner__link {
+	display: block;
+	height: 100%;
+}
+.banner__1 .banner__link:before {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 70%;
+	bottom: 0;
+	left: 0;
+	background: linear-gradient(0deg, #000, transparent);
+	opacity: 0.7;
+	transition: 300ms ease-in-out;
+}
+.banner__1 .banner__link:hover:before {
+	opacity: 0.8;
+	transition: 300ms ease-in-out;
+}
+.banner__1 .banner__image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+}
+.banner__1 .banner__info {
+	position: absolute;
+	width: 100%;
+	left: 0;
+	bottom: 0;
+	color: #fff;
+	padding: 15px;
+}
+.banner__1 .banner__info-title {
+	font-family: RobotoBold;
+	font-size: 17px;
+	line-height: 1.4em;
+}
+.banner__1 .banner__subtitle {
+	line-height: 1.2em;
+}
+@media (max-width: 575px) {
+	.banner__1 .banner__subtitle {display: none;}
+}
+.banner__1 .banner__sticker {
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	border: 1px solid #fff;
+	background-color: rgba(0,0,0,0.2);
+	border-radius: 5px;
+}
+.banner__1 .banner__sticker a {
+	display: block;
+	color: #fff;
+	padding: 4px 8px 2px 8px;
+	font-size: 10px;
+	line-height: 1em;
+	text-transform: uppercase;
+}
+.banner__1 .banner__grid {
+	display: grid;
+	grid-gap: 15px;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-auto-rows: 300px;
+}
+@media (min-width: 320px) and (max-width: 575px) {
+
+}
+@media (min-width: 576px) and (max-width: 767px) {
+	.banner__1 .banner__grid {grid-auto-rows: 50vw;}
+	.banner__1 .banner__grid {grid-template-columns: 1fr;}
+	.banner__1 .banner__grid.odd > div:last-child {grid-column: 1/2;}
+}
+@media (min-width: 768px) and (max-width: 991px) {
+	.banner__1 .banner__grid {grid-template-columns: 1fr 1fr;}
+	.banner__1 .banner__grid.odd > div:last-child {grid-column: 1/3;}
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
+@media (min-width: 1200px) {
+
+}
