@@ -1,39 +1,11 @@
 <?
 $aMenuLinks = Array(
 	Array(
-		"Блог", 
-		"/blog/", 
-		Array(), 
-		Array(), 
-		"" 
+		"Новости",
+		"/news/",
+		Array(),
+		Array(),
+		""
 	),
-	Array(
-		"Новости", 
-		"/news/", 
-		Array(), 
-		Array(), 
-		"" 
-	),
-	Array(
-		"Популярное", 
-		"/popular/", 
-		Array(), 
-		Array(), 
-		"" 
-	),
-	Array(
-		"Свежее", 
-		"/fresh/", 
-		Array(), 
-		Array(), 
-		"" 
-	),
-	Array(
-		"Рубрики", 
-		"/headings/", 
-		Array(), 
-		Array(), 
-		"" 
-	)
 );
 ?>
