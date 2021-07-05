@@ -15,7 +15,7 @@ $this->setFrameMode(true);
 <div class="detail">
     <picture>
         <?getPictureSource($arResult["DETAIL_PICTURE"],["min"=>[1200=>848],"max"=>[260=>290,575=>515,767=>707,991=>691,1199=>668]],0)?>
-        <img class="detail__image" srcset="<?=$arResult["DETAIL_PICTURE"]["SRC"]?>" alt="<?=$arItem["PREVIEW_TEXT"]?>">
+        <img class="detail__image" srcset="<?=$arResult["DETAIL_PICTURE"]["SRC"]?>" alt="<?=$arResult["PREVIEW_TEXT"]?>">
     </picture>
     <div class="detail__subtitle">
         <?=$arResult["PROPERTIES"]["ADDITIONAL_TITLE"]["VALUE"]?>

@@ -7,7 +7,7 @@
 .grid__6,
 .grid__7 {
     display: grid;
-    grid-gap: 15px;
+    gap: 15px;
 }
 .grid__1 {
     grid-template-columns: 1fr 1fr 1fr;

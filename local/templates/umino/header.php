@@ -1,5 +1,4 @@
-<? if (!defined ('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die(); ?>
-<?php
+<? if (!defined ('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
 // Namespace D7
 use Bitrix\Main\Page\Asset;
 ?>
@@ -34,11 +33,21 @@ use Bitrix\Main\Page\Asset;
 </head>
 <body>
 
+<?//$APPLICATION->IncludeComponent(
+//    "umino:preloader",
+//    ".default",
+//    array(
+//        "ACTIVE" => "Y",
+//        "COMPONENT_TEMPLATE" => ".default"
+//    ),
+//    false
+//);?>
+
 <?$APPLICATION->ShowPanel();?>
 <?$APPLICATION->GetDirProperty("keywords");?>
 <div class="grid__main">
     <header class="header">
-        <div class="header__mine <?=($USER->IsAdmin() ? "nofixed" : "")?>">
+        <div class="header__mine <?=(isAdmin() ? "nofixed" : "")?>">
             <div class="container">
                 <nav class="header__body">
                     <div class="header__logo">
@@ -47,29 +56,7 @@ use Bitrix\Main\Page\Asset;
                         </a>
                     </div>
 
-                    <div class="header__menu">
-                        <div class="container">
-                            <?$APPLICATION->IncludeComponent(
-                                "bitrix:menu",
-                                "menu_top",
-                                array(
-                                    "ALLOW_MULTI_SELECT" => "N",
-                                    "CHILD_MENU_TYPE" => "left",
-                                    "DELAY" => "N",
-                                    "MAX_LEVEL" => "1",
-                                    "MENU_CACHE_GET_VARS" => array(
-                                    ),
-                                    "MENU_CACHE_TIME" => "3600",
-                                    "MENU_CACHE_TYPE" => "N",
-                                    "MENU_CACHE_USE_GROUPS" => "Y",
-                                    "ROOT_MENU_TYPE" => "top",
-                                    "USE_EXT" => "N",
-                                    "COMPONENT_TEMPLATE" => "menu_top"
-                                ),
-                                false
-                            );?>
-                        </div>
-                    </div>
+
 
                     <div class="header__additional">
                         <div class="header__search"><i class="fa fa-search search__open"></i></div>
@@ -82,6 +69,33 @@ use Bitrix\Main\Page\Asset;
                 </nav>
             </div>
         </div>
+<!--        <div class="header__secondary">-->
+<!--            <div class="container">-->
+<!--                <div class="header__menu">-->
+<!--                    <div class="container">-->
+<!--                        --><?//$APPLICATION->IncludeComponent(
+//                            "bitrix:menu",
+//                            "menu_top",
+//                            array(
+//                                "ALLOW_MULTI_SELECT" => "N",
+//                                "CHILD_MENU_TYPE" => "left",
+//                                "DELAY" => "N",
+//                                "MAX_LEVEL" => "1",
+//                                "MENU_CACHE_GET_VARS" => array(
+//                                ),
+//                                "MENU_CACHE_TIME" => "3600",
+//                                "MENU_CACHE_TYPE" => "N",
+//                                "MENU_CACHE_USE_GROUPS" => "Y",
+//                                "ROOT_MENU_TYPE" => "top",
+//                                "USE_EXT" => "N",
+//                                "COMPONENT_TEMPLATE" => "menu_top"
+//                            ),
+//                            false
+//                        );?>
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
         <div class="search">
             <div class="search__body">
                 <div class="search__content">
@@ -100,8 +114,4 @@ use Bitrix\Main\Page\Asset;
 
     <main class="main">
         <div class="container" style="background-color: #fff">
-            <div class="main__grid<?=($APPLICATION->GetProperty("SHOW_SIDEBAR") == 'Y' ? " sidebar" : "")?>">
-                <div>
-                    <?if ($APPLICATION->GetProperty("SHOW_TITLE") == "Y"):?>
-                        <div class="page__title"><h2><?=$APPLICATION->ShowTitle()?></h2></div>
-                    <?endif;?>
+            <div class="row">

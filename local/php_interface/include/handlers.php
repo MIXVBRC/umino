@@ -1,11 +1,8 @@
 <?php
 use Bitrix\Main\EventManager;
 
-$handler = EventManager::getInstance()->addEventHandler(
-    'main',
-    'OnBuildGlobalMenu',
-    'onBuildGlobalMenuHandler'
-);
+EventManager::getInstance()->addEventHandler('main', 'OnBuildGlobalMenu', 'onBuildGlobalMenuHandler');
+EventManager::getInstance()->addEventHandler('iblock', 'OnBeforeIBlockElementAdd', 'onBeforeIBlockElementAddHandler');
 
 function onBuildGlobalMenuHandler(&$aGlobalMenu, &$aModuleMenu)
 {
@@ -18,5 +15,13 @@ function onBuildGlobalMenuHandler(&$aGlobalMenu, &$aModuleMenu)
 
         foreach ($aModuleMenu as $key => $iBlockType)
             if ($iBlockType['items_id'] != 'menu_iblock_/content') unset($aModuleMenu[$key]);
+    }
+}
+
+function onBeforeIBlockElementAddHandler(&$arFields)
+{
+    if ((CIBlockElement::GetList([], ['CODE' => $arFields['CODE']]))->SelectedRowsCount())
+    {
+        $arFields['CODE'] .= '-' . (CIBlockElement::GetList(['ID' => 'DESC'], [], false, ['nPageSize' => 1], ['ID']))->GetNextElement()->GetFields()['ID'];
     }
 }

@@ -1,14 +1,10 @@
 <?
-
-$includePath = __DIR__.'/include/';
-$files = [
-    'constant.php',
-    'functions.php',
-    'handlers.php',
-];
+use Umino\ScanDir;
+include_once __DIR__.'/include/core/scandir.php';
+$files = (new ScanDir())->scan(__DIR__.'/include',['php']);
 foreach ($files as $file)
-    if (file_exists($includePath.$file))
-        include $includePath.$file;
+    if (file_exists($file))
+        include_once $file;
 
 
 
